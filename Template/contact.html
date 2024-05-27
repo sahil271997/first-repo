@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %} Contact{% endblock title %}
+{% block body %}
+<img src="/static/akira-hojo-ZxGdri2EWzk-unsplash.jpg" alt="Girl in a jacket" width="1500" height="400" class="d-block w-100"></img>
+<div class="container">
+    <h1 class="text-center">Contact </h1>
+    <form method="POST" action="/contact">
+    {% csrf_token %}    
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input type="name"  name="name" class="form-control" id="name" >
+          {% comment %} <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> {% endcomment %}
+        </div>
+        <div class="mb-3">
+          <label for="Email" class="form-label">Email address</label>
+          <input type="email" name= "email" class="form-control" id="Email">
+        </div>
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone</label>
+            <input type="phone" name="phone" class="form-control" id="phone">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">dec</label>
+            <textarea class="form-control"  name="decs" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{% endblock body %}
